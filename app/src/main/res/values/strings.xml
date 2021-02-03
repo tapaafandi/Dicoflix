@@ -11,4 +11,8 @@
     <string name="overview">Overview</string>
     <string name="background_poster">Background Poster</string>
     <string name="top_popular_tv_shows">Top Popular Tv Shows</string>
+    <string name="genre">Genre</string>
+    <string name="directors">Directors</string>
+    <string name="creators">Creators</string>
+    <string name="poster_content">Poster Content</string>
 </resources>

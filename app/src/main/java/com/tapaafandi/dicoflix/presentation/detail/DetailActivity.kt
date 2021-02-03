@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.databinding.ActivityDetailBinding
 import com.tapaafandi.dicoflix.utils.Constants.MOVIE_TYPE
 import com.tapaafandi.dicoflix.utils.Constants.TV_SHOW_TYPE
@@ -48,6 +49,7 @@ class DetailActivity : AppCompatActivity() {
             tvReleaseDate.text = movie.releaseDate
             tvOverview.text = movie.overview
             tvGenre.text = movie.genre
+            tvDirector.text = movie.director
 
             Glide.with(this@DetailActivity)
                 .load(movie.posterPath)
@@ -66,6 +68,9 @@ class DetailActivity : AppCompatActivity() {
             tvReleaseDate.text = tvShow.releaseYear
             tvOverview.text = tvShow.overview
             tvGenre.text = tvShow.genre
+
+            tvDirectorCreator.setText(R.string.creators)
+            tvDirector.text = tvShow.creatorName
 
             Glide.with(this@DetailActivity)
                 .load(tvShow.posterPath)
