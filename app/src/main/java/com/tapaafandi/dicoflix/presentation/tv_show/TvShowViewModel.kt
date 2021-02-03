@@ -5,5 +5,6 @@ import com.tapaafandi.dicoflix.domain.model.TvShow
 import com.tapaafandi.dicoflix.utils.DataDummy
 
 class TvShowViewModel : ViewModel() {
+
     fun getTvShows(): List<TvShow> = DataDummy.generateTvShows()
 }
