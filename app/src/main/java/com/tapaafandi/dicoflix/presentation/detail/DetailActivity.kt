@@ -45,6 +45,7 @@ class DetailActivity : AppCompatActivity() {
     private fun requestDetailMovie() {
         val movie = viewModel.getDetailMovie()
         with(binding) {
+            supportActionBar?.setTitle(movie.title)
             tvTitle.text = movie.title
             tvReleaseDate.text = movie.releaseDate
             tvOverview.text = movie.overview
@@ -64,6 +65,7 @@ class DetailActivity : AppCompatActivity() {
     private fun requestDetailTvShow() {
         val tvShow = viewModel.getDetailTvShow()
         with(binding) {
+            supportActionBar?.setTitle(tvShow.title)
             tvTitle.text = tvShow.title
             tvReleaseDate.text = tvShow.releaseYear
             tvOverview.text = tvShow.overview
