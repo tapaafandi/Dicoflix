@@ -21,6 +21,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/primaryBlack</item>
     </style>
 
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_image</item>
+        <item name="android:statusBarColor">@color/softBlue</item>
+    </style>
+
     <style name="textAppearanceHeadline4" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

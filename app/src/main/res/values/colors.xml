@@ -17,5 +17,6 @@
     <color name="colorDarkBlue">#7A8FA6</color>
     <color name="colorGrey">#989898</color>
     <color name="transparent">#61000000</color>
+    <color name="softBlue">#dce4eb</color>
 
 </resources>
