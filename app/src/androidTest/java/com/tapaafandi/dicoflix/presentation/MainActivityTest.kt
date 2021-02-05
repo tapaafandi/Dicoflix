@@ -1,22 +1,16 @@
 package com.tapaafandi.dicoflix.presentation
 
-import androidx.navigation.testing.TestNavHostController
 import androidx.recyclerview.widget.RecyclerView
-import androidx.test.core.app.ActivityScenario
-import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.contrib.NavigationViewActions
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.google.android.material.navigation.NavigationView
 import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.utils.DataDummy
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -29,7 +23,6 @@ class MainActivityTest {
 
     @get:Rule
     var activityRule = ActivityScenarioRule(MainActivity::class.java)
-
 
     @Test
     fun loadMovies() {
@@ -55,6 +48,7 @@ class MainActivityTest {
         onView(withId(R.id.tvOverview)).check(matches(isDisplayed()))
         onView(withId(R.id.tvOverview)).check(matches(withText(dummyMovie[0].overview)))
         onView(withId(R.id.tvReleaseDate)).check(matches(isDisplayed()))
+        onView(withId(R.id.tvReleaseDate)).check(matches(withText(dummyMovie[0].releaseDate)))
         onView(withId(R.id.tvDirector)).check(matches(withText(dummyMovie[0].director)))
         onView(withId(R.id.ivPoster)).check(matches(isDisplayed()))
         onView(withId(R.id.ivPosterBackground)).check(matches(isDisplayed()))
@@ -62,7 +56,7 @@ class MainActivityTest {
 
     @Test
     fun loadTvShow() {
-        onView(withText("TV SHOWW")).perform(click())
+        onView(withId(R.id.tvShowFragment)).perform(click())
         onView(withId(R.id.rvTvShow)).check(matches(isDisplayed()))
         onView(withId(R.id.rvTvShow)).perform(
             RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(
@@ -89,12 +83,9 @@ class MainActivityTest {
         onView(withId(R.id.tvReleaseDate)).check(matches(withText(dummyTvShow[0].releaseYear)))
         onView(withId(R.id.tvGenre)).check(matches(isDisplayed()))
         onView(withId(R.id.tvGenre)).check(matches(withText(dummyTvShow[0].genre)))
-        onView(withId(R.id.tvDirectorCreator)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvDirectorCreator)).check(matches(withText(dummyTvShow[0].creatorName)))
+        onView(withId(R.id.tvDirector)).check(matches(withText(dummyTvShow[0].creatorName)))
         onView(withId(R.id.ivPoster)).check(matches(isDisplayed()))
-        onView(withId(R.id.ivPoster)).check(matches(withText(dummyTvShow[0].posterPath)))
         onView(withId(R.id.ivPosterBackground)).check(matches(isDisplayed()))
-        onView(withId(R.id.ivPosterBackground)).check(matches(withText(dummyTvShow[0].posterPath)))
 
     }
 }
