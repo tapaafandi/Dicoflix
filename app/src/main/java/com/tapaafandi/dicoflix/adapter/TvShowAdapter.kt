@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
 import com.tapaafandi.dicoflix.databinding.ItemsRowBinding
 import com.tapaafandi.dicoflix.domain.model.TvShow
 import com.tapaafandi.dicoflix.presentation.detail.DetailActivity
@@ -12,9 +13,9 @@ import com.tapaafandi.dicoflix.utils.Constants.TV_SHOW_TYPE
 
 class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MovieViewHolder>() {
 
-    private var listTvShow = ArrayList<TvShow>()
+    private var listTvShow = ArrayList<TvShowEntity>()
 
-    fun setTvShow(tvShows: List<TvShow>?) {
+    fun setTvShow(tvShows: List<TvShowEntity>?) {
         if (tvShows == null) return
         this.listTvShow.clear()
         this.listTvShow.addAll(tvShows)
@@ -26,15 +27,15 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MovieViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie = listTvShow[position]
-        holder.bind(movie)
+        val tvShow = listTvShow[position]
+        holder.bind(tvShow)
     }
 
     override fun getItemCount(): Int = listTvShow.size
 
     class MovieViewHolder(private val binding: ItemsRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(tvShow: TvShow) {
+        fun bind(tvShow: TvShowEntity) {
             with(binding) {
                 tvTitle.text = tvShow.title
                 tvOverview.text = tvShow.overview

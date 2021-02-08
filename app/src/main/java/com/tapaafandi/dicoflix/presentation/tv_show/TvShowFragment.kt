@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.adapter.TvShowAdapter
 import com.tapaafandi.dicoflix.databinding.FragmentTvShowBinding
+import com.tapaafandi.dicoflix.viewmodel.ViewModelFactory
 
 class TvShowFragment : Fragment(R.layout.fragment_tv_show) {
 
@@ -20,16 +21,18 @@ class TvShowFragment : Fragment(R.layout.fragment_tv_show) {
         binding = FragmentTvShowBinding.bind(view)
 
         if (activity != null) {
-            viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[TvShowViewModel::class.java]
+            val factory = ViewModelFactory.getInstance(requireActivity())
+            viewModel = ViewModelProvider(this, factory)[TvShowViewModel::class.java]
             requestMovie()
             recyclerViewSetup()
         }
     }
 
     private fun requestMovie() {
-        val tvShow = viewModel.getTvShows()
         tvShowAdapter = TvShowAdapter()
-        tvShowAdapter.setTvShow(tvShow)
+        viewModel.getTvShows().observe(viewLifecycleOwner, { tvShows ->
+            tvShowAdapter.setTvShow(tvShows)
+        })
     }
 
     private fun recyclerViewSetup() {

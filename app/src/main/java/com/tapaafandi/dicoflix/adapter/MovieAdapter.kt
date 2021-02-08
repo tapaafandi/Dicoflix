@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.tapaafandi.dicoflix.data.source.local.entity.MovieEntity
 import com.tapaafandi.dicoflix.databinding.ItemsRowBinding
 import com.tapaafandi.dicoflix.domain.model.Movie
 import com.tapaafandi.dicoflix.presentation.detail.DetailActivity
@@ -12,9 +13,9 @@ import com.tapaafandi.dicoflix.utils.Constants.MOVIE_TYPE
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
-    private var listMovies = ArrayList<Movie>()
+    private var listMovies = ArrayList<MovieEntity>()
 
-    fun setMovies(movies: List<Movie>?) {
+    fun setMovies(movies: List<MovieEntity>?) {
         if (movies == null) return
         this.listMovies.clear()
         this.listMovies.addAll(movies)
@@ -34,7 +35,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     class MovieViewHolder(private val binding: ItemsRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(movie: Movie) {
+        fun bind(movie: MovieEntity) {
             with(binding) {
                 tvTitle.text = movie.title
                 tvOverview.text = movie.overview

@@ -8,6 +8,7 @@ import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.databinding.ActivityDetailBinding
 import com.tapaafandi.dicoflix.utils.Constants.MOVIE_TYPE
 import com.tapaafandi.dicoflix.utils.Constants.TV_SHOW_TYPE
+import com.tapaafandi.dicoflix.viewmodel.ViewModelFactory
 
 class DetailActivity : AppCompatActivity() {
 
@@ -27,7 +28,8 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailViewModel::class.java]
+        val factory = ViewModelFactory.getInstance(this)
+        viewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
 
         val idDetail = intent.getIntExtra(EXTRA_DETAIL, 0)
         when (intent.getStringExtra(EXTRA_TYPE)) {
@@ -43,47 +45,48 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun requestDetailMovie() {
-        val movie = viewModel.getDetailMovie()
-        with(binding) {
-            supportActionBar?.setTitle(movie.title)
-            tvTitle.text = movie.title
-            tvReleaseDate.text = movie.releaseDate
-            tvOverview.text = movie.overview
-            tvGenre.text = movie.genre
-            tvDirector.text = movie.director
+        viewModel.getMovie().observe(this, { movie ->
+            with(binding) {
+                supportActionBar?.setTitle(movie.title)
+                tvTitle.text = movie.title
+                tvReleaseDate.text = movie.releaseDate
+                tvOverview.text = movie.overview
+                tvGenre.text = movie.genre
+                tvDirector.text = movie.director
 
-            Glide.with(this@DetailActivity)
-                .load(movie.posterPath)
-                .into(ivPoster)
+                Glide.with(this@DetailActivity)
+                    .load(movie.posterPath)
+                    .into(ivPoster)
 
-            Glide.with(this@DetailActivity)
-                .load(movie.posterPath)
-                .into(ivPosterBackground)
-        }
+                Glide.with(this@DetailActivity)
+                    .load(movie.posterPath)
+                    .into(ivPosterBackground)
+            }
+        })
     }
 
     private fun requestDetailTvShow() {
-        val tvShow = viewModel.getDetailTvShow()
-        with(binding) {
-            supportActionBar?.setTitle(tvShow.title)
-            tvTitle.text = tvShow.title
-            tvReleaseDate.text = tvShow.releaseYear
-            tvOverview.text = tvShow.overview
-            tvGenre.text = tvShow.genre
+        viewModel.getTvShow().observe(this, { tvShow ->
+            with(binding) {
+                supportActionBar?.setTitle(tvShow.title)
+                tvTitle.text = tvShow.title
+                tvReleaseDate.text = tvShow.releaseYear
+                tvOverview.text = tvShow.overview
+                tvGenre.text = tvShow.genre
 
-            tvDirectorCreator.setText(R.string.creators)
-            tvDirector.text = tvShow.creatorName
+                tvDirectorCreator.setText(R.string.creators)
+                tvDirector.text = tvShow.creatorName
 
-            Glide.with(this@DetailActivity)
-                .load(tvShow.posterPath)
-                .into(ivPoster)
+                Glide.with(this@DetailActivity)
+                    .load(tvShow.posterPath)
+                    .into(ivPoster)
 
-            Glide.with(this@DetailActivity)
-                .load(tvShow.posterPath)
-                .into(ivPosterBackground)
-        }
+                Glide.with(this@DetailActivity)
+                    .load(tvShow.posterPath)
+                    .into(ivPosterBackground)
+            }
+        })
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

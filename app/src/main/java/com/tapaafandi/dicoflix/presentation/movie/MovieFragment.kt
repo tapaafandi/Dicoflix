@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.adapter.MovieAdapter
 import com.tapaafandi.dicoflix.databinding.FragmentMovieBinding
+import com.tapaafandi.dicoflix.viewmodel.ViewModelFactory
 
 class MovieFragment : Fragment(R.layout.fragment_movie) {
 
@@ -20,16 +21,20 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         binding = FragmentMovieBinding.bind(view)
 
         if (activity != null) {
-            viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MovieViewModel::class.java]
+            val factory = ViewModelFactory.getInstance(requireActivity())
+            viewModel = ViewModelProvider(this, factory)[MovieViewModel::class.java]
+
             requestMovie()
             recyclerViewSetup()
+
         }
     }
 
     private fun requestMovie() {
-        val movies = viewModel.getMovies()
         movieAdapter = MovieAdapter()
-        movieAdapter.setMovies(movies)
+        viewModel.getMovies().observe(viewLifecycleOwner, { movies ->
+            movieAdapter.setMovies(movies)
+        })
     }
 
     private fun recyclerViewSetup() {

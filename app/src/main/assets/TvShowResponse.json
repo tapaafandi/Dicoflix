@@ -1,0 +1,94 @@
+{
+  "tv_shows": [
+    {
+      "id": 1,
+      "title": "WandaVision",
+      "overview": "Wanda Maximoff and Vision—two super-powered beings living idealized suburban lives—begin to suspect that everything is not as it seems.",
+      "releaseYear": "2021",
+      "posterPath": "R.drawable.poster_wandavision",
+      "genre": "Sci-Fi & Fantasy, Mystery, Comedy, Drama",
+      "director": "Jac Schaeffer"
+    },
+    {
+      "id": 2,
+      "title": "Fate: The Winx Saga",
+      "overview": "The coming-of-age journey of five fairies attending Alfea, a magical boarding school in the Otherworld where they must learn to master their powers while navigating love, rivalries, and the monsters that threaten their very existence.",
+      "releaseYear": "2021",
+      "posterPath": "R.drawable.poster_fate_the_winx_saga",
+      "genre": "Action, Adventure, Drama",
+      "director": "Brian Young"
+    },
+    {
+      "id": 3,
+      "title": "Bridgerton",
+      "overview": "Wealth, lust, and betrayal set against the backdrop of Regency-era England, seen through the eyes of the powerful Bridgerton family.",
+      "releaseYear": "2020",
+      "posterPath": "R.drawable.poster_bridgerton",
+      "genre": "Drama",
+      "director": "Chris Van Dusen"
+    },
+    {
+      "id": 4,
+      "title": "Lupin",
+      "overview": "Inspired by the adventures of Arsène Lupin, gentleman thief Assane Diop sets out to avenge his father for an injustice inflicted by a wealthy family.",
+      "releaseYear": "2021",
+      "posterPath": "R.drawable.poster_lupin",
+      "genre": "Crime, Drama, Mystery",
+      "director": "George Kay"
+    },
+    {
+      "id": 5,
+      "title": "The Queen's Gambit",
+      "overview": "Orphaned at the tender age of nine, prodigious introvert Beth Harmon discovers and masters the game of chess in 1960s USA. But child stardom comes at a price.",
+      "releaseYear": "2020",
+      "posterPath": "R.drawable.poster_the_queens_gambit",
+      "genre": "Drama, Sport",
+      "director": "Scott Frank, Allan Scott"
+    },
+    {
+      "id": 6,
+      "title": "Riverdale",
+      "overview": "Set in the present, the series offers a bold, subversive take on Archie, Betty, Veronica and their friends, exploring the surreality of small-town life, the darkness and weirdness bubbling beneath Riverdale’s wholesome facade.",
+      "releaseYear": "2017",
+      "posterPath": "R.drawable.poster_riverdale",
+      "genre": "Mystery, Drama, Crime",
+      "director": "Roberto Aguirre-Sacasa"
+    },
+    {
+      "id": 7,
+      "title": "Game of Thrones",
+      "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "releaseYear": "2011",
+      "posterPath": "R.drawable.poster_got",
+      "genre": "Sci-Fi & Fantasy, Drama, Action & Adventure, Mystery, War & Politics",
+      "director": "David Benioff, D. B. Weiss"
+    },
+    {
+      "id": 8,
+      "title": "The Umbrella Academy",
+      "overview": "A dysfunctional family of superheroes comes together to solve the mystery of their father's death, the threat of the apocalypse and more.",
+      "releaseYear": "2019",
+      "posterPath": "R.drawable.poster_the_umbrella_academy",
+      "genre": "Action & Adventure, Sci-Fi & Fantasy, Drama",
+      "director": "Steve Blackman"
+    },
+    {
+      "id": 9,
+      "title": "Lucifer",
+      "overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+      "releaseYear": "2016",
+      "posterPath": "R.drawable.poster_lucifer",
+      "genre": "Crime, Sci-Fi & Fantasy",
+      "director": "Tom Kapinos"
+    },
+    {
+      "id": 10,
+      "title": "The Flash",
+      "overview": "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "releaseYear": "2014",
+      "posterPath": "R.drawable.poster_the_flash",
+      "genre": "Drama, Sci-Fi & Fantasy",
+      "director": "Greg Berlanti, Geoff Johns, Andrew Kreisberg"
+    }
+  ]
+}

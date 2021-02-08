@@ -1,11 +1,15 @@
 package com.tapaafandi.dicoflix.presentation.detail
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.tapaafandi.dicoflix.data.source.DicoflixRepository
+import com.tapaafandi.dicoflix.data.source.local.entity.MovieEntity
+import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
 import com.tapaafandi.dicoflix.domain.model.Movie
 import com.tapaafandi.dicoflix.domain.model.TvShow
 import com.tapaafandi.dicoflix.utils.DataDummy
 
-class DetailViewModel : ViewModel() {
+class DetailViewModel(private val dicoflixRepository: DicoflixRepository) : ViewModel() {
 
     private var movieId: Int = 0
     private var tvShowId: Int = 0
@@ -14,29 +18,11 @@ class DetailViewModel : ViewModel() {
         this.movieId = movieId
     }
 
-    fun getDetailMovie(): Movie {
-        lateinit var movie: Movie
-        val moviesEntities = DataDummy.generateDummyMovies()
-        for (movieEntity in moviesEntities) {
-            if (movieEntity.id == this.movieId) {
-                movie = movieEntity
-            }
-        }
-     return movie
-    }
-
     fun setSelectedTvShow(tvShowId: Int) {
         this.tvShowId = tvShowId
     }
 
-    fun getDetailTvShow(): TvShow {
-        lateinit var tvShow: TvShow
-        val tvShowEntities = DataDummy.generateTvShows()
-        for (tvShowEntity in tvShowEntities) {
-            if (tvShowEntity.id == tvShowId) {
-                tvShow = tvShowEntity
-            }
-        }
-        return tvShow
-    }
+    fun getMovie(): LiveData<MovieEntity> = dicoflixRepository.getMovieDetail(movieId)
+
+    fun getTvShow(): LiveData<TvShowEntity> = dicoflixRepository.getTvShowDetail(tvShowId)
 }
