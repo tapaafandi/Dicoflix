@@ -15,7 +15,13 @@ import com.tapaafandi.dicoflix.utils.Constants.MOVIE_TYPE
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
+    private var onItemClickCallback: OnItemClickCallback? = null
+
     private var listMovies = ArrayList<MovieEntity>()
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     fun setMovies(movies: List<MovieEntity>?) {
         if (movies == null) return
@@ -35,11 +41,11 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     override fun getItemCount(): Int = listMovies.size
 
-    class MovieViewHolder(private val binding: ItemsRowBinding) :
+    inner class MovieViewHolder(private val binding: ItemsRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: MovieEntity) {
             with(binding) {
-                tvTitle.text = movie.title
+                tvTitleItem.text = movie.title
                 tvOverview.text = movie.overview
                 tvDateRelease.text = movie.releaseDate
 
@@ -48,14 +54,12 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                     .apply(RequestOptions.placeholderOf(R.drawable.dicoflix_placeholder))
                     .into(ivMovieItem)
 
-                itemView.setOnClickListener {
-                    Intent(itemView.context, DetailActivity::class.java).apply {
-                        putExtra(DetailActivity.EXTRA_DETAIL, movie.id)
-                        putExtra(DetailActivity.EXTRA_TYPE, MOVIE_TYPE)
-                        itemView.context.startActivity(this)
-                    }
-                }
+                itemView.setOnClickListener { onItemClickCallback?.onItemClicked(movie) }
             }
         }
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: MovieEntity)
     }
 }

@@ -4,6 +4,7 @@ import android.os.Handler
 import android.os.Looper
 import com.tapaafandi.dicoflix.data.source.remote.response.MovieResponse
 import com.tapaafandi.dicoflix.data.source.remote.response.TvShowResponse
+import com.tapaafandi.dicoflix.utils.EspressoIdlingResource
 import com.tapaafandi.dicoflix.utils.JsonHelper
 
 class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
@@ -23,12 +24,27 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
     }
 
     fun getAllMovies(callback: LoadMoviesCallback) {
-        handler.postDelayed({ callback.onAllMoviesReceived(jsonHelper.loadMovies()) }, SERVICE_LATENCY_IN_MILLIS)
+        EspressoIdlingResource.increment()
+        handler.postDelayed(
+            {
+                callback.onAllMoviesReceived(jsonHelper.loadMovies())
+                EspressoIdlingResource.decrement()
+            },
+            SERVICE_LATENCY_IN_MILLIS
+        )
     }
 
     fun getAllTvShows(callback: LoadTvShowsCallback) {
-        handler.postDelayed({ callback.onAllTvShowsReceived(jsonHelper.loadTvShow()) }, SERVICE_LATENCY_IN_MILLIS)
+        EspressoIdlingResource.increment()
+        handler.postDelayed(
+            {
+                callback.onAllTvShowsReceived(jsonHelper.loadTvShow())
+                EspressoIdlingResource.decrement()
+            },
+            SERVICE_LATENCY_IN_MILLIS
+        )
     }
+
     interface LoadMoviesCallback {
         fun onAllMoviesReceived(movieResponses: List<MovieResponse>)
     }

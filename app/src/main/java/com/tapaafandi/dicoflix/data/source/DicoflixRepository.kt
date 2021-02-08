@@ -98,15 +98,17 @@ class DicoflixRepository private constructor(private val remoteDataSource: Remot
             override fun onAllTvShowsReceived(tvShowsResponses: List<TvShowResponse>) {
                 lateinit var tvShow: TvShowEntity
                 for (response in tvShowsResponses) {
-                    tvShow = TvShowEntity(
-                        response.id,
-                        response.title,
-                        response.overview,
-                        response.releaseYear,
-                        response.posterPath,
-                        response.genre,
-                        response.creatorName
-                    )
+                    if (response.id == tvShowId) {
+                        tvShow = TvShowEntity(
+                            response.id,
+                            response.title,
+                            response.overview,
+                            response.releaseYear,
+                            response.posterPath,
+                            response.genre,
+                            response.creatorName
+                        )
+                    }
                 }
                 tvShowResult.postValue(tvShow)
             }

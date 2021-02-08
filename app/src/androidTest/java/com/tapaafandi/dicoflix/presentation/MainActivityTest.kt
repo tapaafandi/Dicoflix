@@ -1,17 +1,20 @@
 package com.tapaafandi.dicoflix.presentation
 
 import androidx.recyclerview.widget.RecyclerView
+import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.utils.DataDummy
-import org.junit.Rule
+import com.tapaafandi.dicoflix.utils.EspressoIdlingResource
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -21,8 +24,16 @@ class MainActivityTest {
     private val dummyMovie = DataDummy.generateDummyMovies()
     private val dummyTvShow = DataDummy.generateTvShows()
 
-    @get:Rule
-    var activityRule = ActivityScenarioRule(MainActivity::class.java)
+   @Before
+   fun setup() {
+       ActivityScenario.launch(MainActivity::class.java)
+       IdlingRegistry.getInstance().register(EspressoIdlingResource.idlingResource)
+   }
+
+    @After
+    fun tearDown() {
+        IdlingRegistry.getInstance().unregister(EspressoIdlingResource.idlingResource)
+    }
 
     @Test
     fun loadMovies() {
@@ -40,7 +51,7 @@ class MainActivityTest {
         onView(withId(R.id.rvMovies)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
                 0,
-                ViewActions.click()
+                click()
             )
         )
         onView(withId(R.id.tvTitle)).check(matches(isDisplayed()))

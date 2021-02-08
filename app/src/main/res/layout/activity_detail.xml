@@ -38,8 +38,7 @@
             android:background="@color/transparent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextAppearance="@style/textAppearanceSubtitle1"
-            app:titleTextColor="@color/primaryWhite"
-            app:title="Title" />
+            app:titleTextColor="@color/primaryWhite" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
