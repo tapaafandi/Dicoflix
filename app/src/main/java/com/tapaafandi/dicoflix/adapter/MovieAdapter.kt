@@ -48,6 +48,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                 Glide.with(itemView.context)
                     .load(movie.posterPath)
                     .apply(RequestOptions.placeholderOf(R.drawable.dicoflix_placeholder))
+                    .error(R.drawable.dicoflix_placeholder)
                     .into(ivMovieItem)
 
                 itemView.setOnClickListener { onItemClickCallback?.onItemClicked(movie) }

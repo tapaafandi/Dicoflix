@@ -48,6 +48,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MovieViewHolder>() {
                 Glide.with(itemView.context)
                     .load(tvShow.posterPath)
                     .apply(RequestOptions.placeholderOf(R.drawable.dicoflix_placeholder))
+                    .error(R.drawable.dicoflix_placeholder)
                     .into(ivMovieItem)
 
                 itemView.setOnClickListener { onItemClickCallback?.onItemClicked(tvShow) }
