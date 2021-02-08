@@ -23,16 +23,16 @@ class TvShowFragment : Fragment(R.layout.fragment_tv_show) {
         if (activity != null) {
             val factory = ViewModelFactory.getInstance(requireActivity())
             viewModel = ViewModelProvider(this, factory)[TvShowViewModel::class.java]
-            requestMovie()
+            binding.pbTvShow.visibility = View.VISIBLE
+            tvShowAdapter = TvShowAdapter()
+            viewModel.getTvShows().observe(viewLifecycleOwner, { tvShows ->
+                binding.pbTvShow.visibility = View.GONE
+                tvShowAdapter.setTvShow(tvShows)
+                tvShowAdapter.notifyDataSetChanged()
+            })
+
             recyclerViewSetup()
         }
-    }
-
-    private fun requestMovie() {
-        tvShowAdapter = TvShowAdapter()
-        viewModel.getTvShows().observe(viewLifecycleOwner, { tvShows ->
-            tvShowAdapter.setTvShow(tvShows)
-        })
     }
 
     private fun recyclerViewSetup() {
@@ -42,5 +42,4 @@ class TvShowFragment : Fragment(R.layout.fragment_tv_show) {
             adapter = tvShowAdapter
         }
     }
-
 }

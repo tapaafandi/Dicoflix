@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
 import com.tapaafandi.dicoflix.databinding.ItemsRowBinding
 import com.tapaafandi.dicoflix.domain.model.TvShow
@@ -43,6 +45,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MovieViewHolder>() {
 
                 Glide.with(itemView.context)
                     .load(tvShow.posterPath)
+                    .apply(RequestOptions.placeholderOf(R.drawable.dicoflix_placeholder))
                     .into(ivMovieItem)
 
                 itemView.setOnClickListener {

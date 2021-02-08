@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/poster_alita" />
+            android:src="@drawable/dicoflix_placeholder" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/sample_title"
+        tools:text="@string/sample_title"
         app:layout_constraintStart_toEndOf="@+id/cvMovieItem"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
@@ -53,7 +53,7 @@
         style="@style/textAppearanceCaption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sample_date"
+        tools:text="@string/sample_date"
         app:layout_constraintStart_toStartOf="@+id/tvTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
@@ -66,7 +66,7 @@
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
         android:maxLines="3"
-        android:text="@string/sample_overview"
+        tools:text="@string/sample_overview"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvDateRelease"

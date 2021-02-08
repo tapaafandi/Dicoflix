@@ -34,7 +34,7 @@ class JsonHelper(private val context: Context) {
                 val title = movie.getString("title")
                 val overview = movie.getString("overview")
                 val releaseDate = movie.getString("releaseDate")
-                val posterPath = movie.getString("posterPath").toInt()
+                val posterPath = movie.getString("posterPath")
                 val genre = movie.getString("genre")
                 val director = movie.getString("director")
 
@@ -58,7 +58,7 @@ class JsonHelper(private val context: Context) {
                 val title = tvShow.getString("title")
                 val overview = tvShow.getString("overview")
                 val releaseYear = tvShow.getString("releaseYear")
-                val posterPath = tvShow.getString("posterPath").toInt()
+                val posterPath = tvShow.getString("posterPath")
                 val genre = tvShow.getString("genre")
                 val director = tvShow.getString("director")
 

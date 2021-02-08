@@ -5,7 +5,7 @@
       "title": "Godzilla vs. Kong",
       "overview": "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
       "releaseDate": "31 March 2021",
-      "posterPath": "R.drawable.poster_godzilla_vs_kong",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/3Iso4hatk3N0RTkQFAk7YFO4GGy.jpg",
       "genre": "Action, Sci-Fi, Thriller",
       "director": "Adam Wingard"
     },
@@ -14,7 +14,7 @@
       "title": "The Little Things",
       "overview": "Deputy Sheriff Joe \"Deke\" Deacon joins forces with Sgt. Jim Baxter to search for a serial killer who's terrorizing Los Angeles. As they track the culprit, Baxter is unaware that the investigation is dredging up echoes of Deke's past, uncovering disturbing secrets that could threaten more than his case.",
       "releaseDate": "29 January 2021",
-      "posterPath": "R.drawable.poster_the_little_things",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
       "genre": "Thriller, Crime",
       "director": "John Lee Hancock"
     },
@@ -23,7 +23,7 @@
       "title": "The White Tiger",
       "overview": "An ambitious Indian driver uses his wit and cunning to escape from poverty and rise to the top. An epic journey based on the New York Times bestseller.",
       "releaseDate": "22 January 2021",
-      "posterPath": "R.drawable.poster_the_white_tiger",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7K4mdWaLGF2F4ASb2L12tlya9c9.jpg",
       "genre": "Crime, Drama",
       "director": "Ramin Bahrani"
     },
@@ -32,7 +32,7 @@
       "title": "The Dig",
       "overview": "As WWII looms, a wealthy widow hires an amateur archaeologist to excavate the burial mounds on her estate. When they make a historic discovery, the echoes of Britain's past resonate in the face of its uncertain future.",
       "releaseDate": "29 January 2021",
-      "posterPath": "R.drawable.poster_the_dig",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/dFDNb9Gk1kyLRcconpj7Mc7C7IL.jpg",
       "genre": "Drama, History",
       "director": "Simon Stone"
     },
@@ -41,7 +41,7 @@
       "title": "Soul",
       "overview": "After landing the gig of a lifetime, a New York jazz pianist suddenly finds himself trapped in a strange land between Earth and the afterlife.",
       "releaseDate": "25 December 2020",
-      "posterPath": "R.drawable.poster_soul",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hm58Jw4Lw8OIeECIq5qyPYhAeRJ.jpg",
       "genre": "Animation, Adventure, Comedy",
       "director": "Pete Docter"
     },
@@ -50,7 +50,7 @@
       "title": "Tenet",
       "overview": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
       "releaseDate": "3 September 2020",
-      "posterPath": "R.drawable.poster_tenet",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/k68nPLbIST6NP96JmTxmZijEvCA.jpg",
       "genre": "Action, Thriller, Science Fiction",
       "director": "Christopher Nolan"
     },
@@ -59,7 +59,7 @@
       "title": "Palmer",
       "overview": "After 12 years in prison, former high school football star Eddie Palmer returns home to put his life back together—and forms an unlikely bond with Sam, an outcast boy from a troubled home. But Eddie's past threatens to ruin his new life and family.",
       "releaseDate": "29 January 2021",
-      "posterPath": "R.drawable.poster_palmer",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xSDdRAjxKAGi8fUBLOqSrBhJmF0.jpg",
       "genre": "Drama",
       "director": "Fisher Stevens"
     },
@@ -68,7 +68,7 @@
       "title": "The Vanished",
       "overview": "Story of a husband and wife that will stop at nothing to find their missing daughter, who disappeared on a family camping trip. When the police don't catch any leads, the duo take over.",
       "releaseDate": "21 August 2020",
-      "posterPath": "R.drawable.poster_the_vanished",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bYePSWEmMw9PQ9hNwMzgW1rQUtI.jpg",
       "genre": "Action, Mystery, Thriller",
       "director": "Peter Facinelli"
     },
@@ -77,16 +77,16 @@
       "title": "Outside the Wire",
       "overview": "In the near future, a drone pilot sent into a war zone finds himself paired with a top-secret android officer on a mission to stop a nuclear attack.",
       "releaseDate": "15 January 2021",
-      "posterPath":  "R.drawable.poster_outside_the_wire",
-      "genre":  "Thriller, Action, Science Fiction",
-      "director":  "Mikael Håfström"
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6XYLiMxHAaCsoyrVo38LBWMw2p8.jpg",
+      "genre": "Thriller, Action, Science Fiction",
+      "director": "Mikael Håfström"
     },
     {
       "id": 10,
       "title": "One Night in Miami",
       "overview": "In the aftermath of Cassius Clay's defeat of Sonny Liston in 1964, the boxer meets with Malcolm X, Sam Cooke and Jim Brown to change the course of history in the segregated South.",
       "releaseDate": "8 January 2021",
-      "posterPath": "R.drawable.poster_one_night_in_miami",
+      "posterPath": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/rfIOzedY6LFzdWTeNnIkmxAiLCg.jpg",
       "genre": "Drama",
       "director": "Regina King"
     }

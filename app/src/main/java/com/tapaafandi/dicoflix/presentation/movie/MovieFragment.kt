@@ -23,18 +23,17 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         if (activity != null) {
             val factory = ViewModelFactory.getInstance(requireActivity())
             viewModel = ViewModelProvider(this, factory)[MovieViewModel::class.java]
+            binding.pbMovie.visibility = View.VISIBLE
+            movieAdapter = MovieAdapter()
+            viewModel.getMovies().observe(viewLifecycleOwner, { movies ->
+                binding.pbMovie.visibility = View.GONE
+                movieAdapter.setMovies(movies)
+                movieAdapter.notifyDataSetChanged()
+            })
 
-            requestMovie()
             recyclerViewSetup()
 
         }
-    }
-
-    private fun requestMovie() {
-        movieAdapter = MovieAdapter()
-        viewModel.getMovies().observe(viewLifecycleOwner, { movies ->
-            movieAdapter.setMovies(movies)
-        })
     }
 
     private fun recyclerViewSetup() {
@@ -44,5 +43,4 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
             adapter = movieAdapter
         }
     }
-
 }

@@ -2,6 +2,7 @@ package com.tapaafandi.dicoflix.presentation.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.tapaafandi.dicoflix.R
@@ -30,6 +31,8 @@ class DetailActivity : AppCompatActivity() {
 
         val factory = ViewModelFactory.getInstance(this)
         viewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
+
+        showLoading(true)
 
         val idDetail = intent.getIntExtra(EXTRA_DETAIL, 0)
         when (intent.getStringExtra(EXTRA_TYPE)) {
@@ -61,6 +64,8 @@ class DetailActivity : AppCompatActivity() {
                 Glide.with(this@DetailActivity)
                     .load(movie.posterPath)
                     .into(ivPosterBackground)
+
+                showLoading(false)
             }
         })
     }
@@ -84,6 +89,8 @@ class DetailActivity : AppCompatActivity() {
                 Glide.with(this@DetailActivity)
                     .load(tvShow.posterPath)
                     .into(ivPosterBackground)
+
+                showLoading(false)
             }
         })
     }
@@ -91,5 +98,21 @@ class DetailActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return super.onSupportNavigateUp()
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.cvPoster.visibility = View.INVISIBLE
+            binding.tvOverviewTitle.visibility = View.INVISIBLE
+            binding.tvGenreTitle.visibility = View.INVISIBLE
+            binding.tvDirectorCreator.visibility = View.INVISIBLE
+        } else {
+            binding.pbDetail.visibility = View.GONE
+            binding.cvPoster.visibility = View.VISIBLE
+            binding.cvPoster.visibility = View.VISIBLE
+            binding.tvOverviewTitle.visibility = View.VISIBLE
+            binding.tvGenreTitle.visibility = View.VISIBLE
+            binding.tvDirectorCreator.visibility = View.VISIBLE
+        }
     }
 }

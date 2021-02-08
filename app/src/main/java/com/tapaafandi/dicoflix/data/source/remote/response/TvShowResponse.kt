@@ -9,7 +9,7 @@ data class TvShowResponse(
     val title: String,
     val overview: String,
     val releaseYear: String,
-    val posterPath: Int,
+    val posterPath: String,
     val genre: String,
     val creatorName: String,
 ): Parcelable
