@@ -1,25 +1,21 @@
 package com.tapaafandi.dicoflix.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.tapaafandi.dicoflix.R
-import com.tapaafandi.dicoflix.data.source.local.entity.MovieEntity
 import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
 import com.tapaafandi.dicoflix.databinding.ItemsRowBinding
-import com.tapaafandi.dicoflix.presentation.detail.DetailActivity
-import com.tapaafandi.dicoflix.utils.Constants.TV_SHOW_TYPE
 
 class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MovieViewHolder>() {
 
-    private var onItemClickCallback: TvShowAdapter.OnItemClickCallback? = null
+    private var onItemClickCallback: OnItemClickCallback? = null
 
     private var listTvShow = ArrayList<TvShowEntity>()
 
-    fun setOnItemClickCallback(onItemClickCallback: TvShowAdapter.OnItemClickCallback) {
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 

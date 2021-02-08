@@ -5,9 +5,6 @@ import androidx.lifecycle.ViewModel
 import com.tapaafandi.dicoflix.data.source.DicoflixRepository
 import com.tapaafandi.dicoflix.data.source.local.entity.MovieEntity
 import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
-import com.tapaafandi.dicoflix.domain.model.Movie
-import com.tapaafandi.dicoflix.domain.model.TvShow
-import com.tapaafandi.dicoflix.utils.DataDummy
 
 class DetailViewModel(private val dicoflixRepository: DicoflixRepository) : ViewModel() {
 

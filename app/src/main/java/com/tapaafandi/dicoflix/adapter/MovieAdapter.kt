@@ -1,6 +1,5 @@
 package com.tapaafandi.dicoflix.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,9 +8,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.data.source.local.entity.MovieEntity
 import com.tapaafandi.dicoflix.databinding.ItemsRowBinding
-import com.tapaafandi.dicoflix.domain.model.Movie
-import com.tapaafandi.dicoflix.presentation.detail.DetailActivity
-import com.tapaafandi.dicoflix.utils.Constants.MOVIE_TYPE
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 

@@ -7,7 +7,6 @@ import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
 import com.tapaafandi.dicoflix.data.source.remote.RemoteDataSource
 import com.tapaafandi.dicoflix.data.source.remote.response.MovieResponse
 import com.tapaafandi.dicoflix.data.source.remote.response.TvShowResponse
-import org.junit.Assert.*
 
 class FakeDicoflixRepository(private val remoteDataSource: RemoteDataSource): DicoflixDataSource {
 

@@ -7,7 +7,6 @@ import com.nhaarman.mockitokotlin2.verify
 import com.tapaafandi.dicoflix.data.source.DicoflixRepository
 import com.tapaafandi.dicoflix.data.source.local.entity.MovieEntity
 import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
-import com.tapaafandi.dicoflix.domain.model.Movie
 import com.tapaafandi.dicoflix.utils.DataDummy
 import org.junit.Test
 

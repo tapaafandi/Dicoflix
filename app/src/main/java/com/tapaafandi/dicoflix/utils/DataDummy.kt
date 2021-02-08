@@ -1,12 +1,9 @@
 package com.tapaafandi.dicoflix.utils
 
-import com.tapaafandi.dicoflix.R
 import com.tapaafandi.dicoflix.data.source.local.entity.MovieEntity
 import com.tapaafandi.dicoflix.data.source.local.entity.TvShowEntity
 import com.tapaafandi.dicoflix.data.source.remote.response.MovieResponse
 import com.tapaafandi.dicoflix.data.source.remote.response.TvShowResponse
-import com.tapaafandi.dicoflix.domain.model.Movie
-import com.tapaafandi.dicoflix.domain.model.TvShow
 
 object DataDummy {
 
